@@ -1,5 +1,3 @@
-export const ActionTypes = ({
-    SET_IMAGES: "SET_IMAGES",
-    SELECTED_IMAGE: "SELECTED_PRODUCT",
-    REMOVE_SELECTED_PRODUCT: "REMOVE_SELECTED_PRODUCT",
-})
+export const ActionTypes = {
+  SET_IMAGES: "SET_IMAGES",
+};
