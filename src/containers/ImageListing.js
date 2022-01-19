@@ -5,17 +5,15 @@ import { setImages } from "../redux/actions/actions";
 import ImageComponent from "../containers/ImageComponent";
 
 const ImageListing = () => {
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=${API_KEY}`;
   const images = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const fetchImages = async () => {
-    const response = await axios
-      .get(
-        "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&page=2&api_key=n4gz6Y1uEVbCva6x6SCzL4gUyCQBJ8PZ8D1okTaA"
-      )
-      .catch((error) => {
-        console.log("error", error);
-      });
+    const response = await axios.get(API_URL).catch((error) => {
+      console.log("error", error);
+    });
     dispatch(setImages(response.data.photos));
   };
 
