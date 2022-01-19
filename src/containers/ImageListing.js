@@ -24,8 +24,7 @@ const ImageListing = () => {
   }, []);
   return (
     <div className="container my-5">
-      <h2>Mars</h2>
-      <div className="my-3">
+      <div>
         <ImageComponent />
       </div>
     </div>
